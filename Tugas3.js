@@ -1,16 +1,16 @@
-const selectionValue = (Awal, Akhir, dataArr) => {
-    if (Awal < Akhir && (dataArr.length >= 5 && Awal <= dataArr.length)) {
-        const result = dataArr.filter((data) => data >= Awal && data <= Akhir);
+const valueSelection = (firstValue, LastValue, dataArr) => {
+    if (firstValue < LastValue && (dataArr.length >= 5 && firstValue <= dataArr.length)) {
+        const result = dataArr.filter((data) => data >= firstValue && data <= LastValue);
         result.sort((a, b) => a - b);
         console.log(result);
-    } else if (Awal > Akhir) {
-        console.log('Nilai Akhir Harus Lebih besar dari nilai awal');
+    } else if (firstValue > LastValue) {
+        console.log('The final value must be greater than the initial value');
     } else if (dataArr.length < 5) {
-        console.log('Data Array Harus lebih dari 5');
+        console.log('Array Data Must be more than 5');
     } else {
-        console.log('Nilai tidak di temukan');
+        console.log('Value not found...');
     }
 }
 
-selectionValue(2, 6, [1, 8, 3, 4, 7])
+valueSelection(2, 6, [1, 8, 3, 4, 7])
 
